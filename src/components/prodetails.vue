@@ -486,25 +486,28 @@
 				this.two=false;
 				this.three=false;
 				this.four=false;
-				this.scrollTop=0;
+				document.documentElement.scrollTop=0;
 			},
 			cTwo(){
 				this.two=true;
 				this.one=false;
 				this.three=false;
 				this.four=false;
+				document.documentElement.scrollTop=1300;
 			},
 			cThree(){
 				this.three=true;
 				this.two=false;
 				this.one=false;
 				this.four=false;
+				document.documentElement.scrollTop=1600;
 			},
 			cFour(){
 				this.two=false;
 				this.three=false;
 				this.one=false;
-				this.four=true;0
+				this.four=true;
+				document.documentElement.scrollTop=5550;
 			},
 			joinCar(){
 				this.proShopCar.push(this.proCake.inputBs[this.A]);

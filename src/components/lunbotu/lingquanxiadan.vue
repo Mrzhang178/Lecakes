@@ -30,7 +30,7 @@
 					<input type="button" v-model="sendMa" @click="send">
 				</div>
 				<div>
-					<input type="button" value="立即领券">
+					<input type="button" value="立即领券" @click='success'>
 				</div>
 			</div>
 			<div>
@@ -87,6 +87,9 @@
 					alert('请输入正确的手机号')
 				}
 			},
+			success(){
+				alert('领券成功')
+			}
 		}
 	}
 </script>

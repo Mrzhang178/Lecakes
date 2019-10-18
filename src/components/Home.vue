@@ -32,22 +32,22 @@
 			<div class="myDingDan">
 				<p>我的订单</p>
 				<ul>
-				  <router-link to="/" tag="li">
+				  <router-link :to="denglu" tag="li">
 				    <img src="../../static/images/home/dingdan.png" alt="">
 				    <br>
 				    待付款 
 				  </router-link>
-				  <router-link to="/entry" tag="li">
+				  <router-link :to="denglu" tag="li">
 				    <img src="../../static/images/home/fahuo.png" alt="">
 				    <br>
 				    待发货
 				  </router-link>
-				  <router-link to="/entry" tag="li">
+				  <router-link :to="denglu" tag="li">
 				    <img src="../../static/images/home/shouhuo.png" alt="">
 				    <br>
 				    待收货
 				  </router-link>
-				  <router-link to="/entry" tag="li">
+				  <router-link :to="denglu" tag="li">
 				    <img src="../../static/images/home/dingdan.png" alt="">
 				    <br>
 				    我的订单

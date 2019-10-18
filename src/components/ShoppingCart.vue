@@ -33,7 +33,7 @@
 					<div>
 						<span>&yen;{{cakeA.price*cakeA.num}}</span>
 						<div>
-							<button type="button" @click='jian(A)'><img src="../../static/images/shoppingCart/del.png" alt="" v-show='btn1'><span v-show='btn2'>-</span></button>
+							<button type="button" @click='jian(A)'><img src="../../static/images/shoppingCart/del.png" alt="" v-show='btn1' @click='del'><span v-show='btn2'>-</span></button>
 							<input type="button" v-model="cakeA.num">
 							<input type="button" value="+" @click='Add(A)'>
 						</div>
@@ -238,6 +238,9 @@
 					this.btn1=true;
 					this.btn2=false;
 				}
+			},
+			del(){
+				localStorage.clear();
 			},
 			allCkeck(){
 				if(this.xuanzhong=='../../static/images/shoppingCart/xuanzhong.png'){

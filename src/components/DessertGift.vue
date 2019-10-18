@@ -92,6 +92,7 @@
 	          desc:"团圆创意礼盒 中秋馈赠佳礼",
 	          price:218,
 	          xiaoliang:542,
+	          zonghe:1,
 					},
 					{
 						id:'012',
@@ -100,6 +101,7 @@
 	          desc:"团圆创意礼盒 中秋馈赠佳礼",
 	          price:298,
 	          xiaoliang:412,
+	          zonghe:2,
 					},
 					{
 							id:'013',
@@ -108,6 +110,7 @@
 	          desc:"金奖月饼&创意礼盒 中秋馈赠佳礼",
 	          price:218,
 	          xiaoliang:825,
+	          zonghe:3,
 					},
 					{
 						id:'014',
@@ -116,6 +119,7 @@
 	          desc:"征服朋友圈的办公室零食",
 	          price:158,
 	          xiaoliang:417,
+	          zonghe:4,
 					},
 					{
 						id:'015',
@@ -124,6 +128,7 @@
 	          desc:"卖到疯狂的秒杀款",
 	          price:158,
 	          xiaoliang:75,
+	          zonghe:5,
 					},
 					{
 						id:'016',
@@ -132,6 +137,7 @@
 	          desc:"财富自由新标配",
 	          price:68,
 	          xiaoliang:641,
+	          zonghe:6,
 					}
 				],
 			}
@@ -156,6 +162,16 @@
 				this.fa=true;
 				this.fb=false;
 				this.fc=false;
+				for(var x=1;x<this.proDess.length;x++){
+					for(var j = 0;j < this.proDess.length-x ;j++){
+						if(this.proDess[j].zonghe > this.proDess[j+1].zonghe){
+							var temp = this.proDess[j];
+							this.proDess[j] = this.proDess[j+1];
+							this.proDess[j+1] = temp;
+						}
+					}
+				}
+				this.$forceUpdate()
 			},
 			r2(){
 				this.fb=true;
@@ -176,6 +192,16 @@
 				this.fc=true;
 				this.fa=false;
 				this.fb=false;
+				for(var x=1;x<this.proDess.length;x++){
+					for(var j = 0;j < this.proDess.length-x ;j++){
+						if(this.proDess[j].id < this.proDess[j+1].id){
+							var temp = this.proDess[j];
+							this.proDess[j] = this.proDess[j+1];
+							this.proDess[j+1] = temp;
+						}
+					}
+				}
+				this.$forceUpdate()
 			},
 		}
 	}

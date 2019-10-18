@@ -174,12 +174,13 @@
 		background-color: #f4f4f4;
 	}
 	section{
-		width: 600px;
+		width: 100%;
 		margin: auto;
 		background-color: white;
+		box-sizing: border-box;
 		.aha{
 			height: 450px;
-			width: 600px;
+			width: 100%;
 			padding-top: 30px;
 			text-align: center;
 			color: #ffffff;
@@ -191,10 +192,13 @@
 				}
 			}
 			ul{
-				width: 530px;
-				margin-top:60px;
+				width: 88%;
+				margin:60px auto 0;
+				display: flex;
+				flex-wrap: wrap;
+
 				li{
-					width: 150px;
+					width: 30%;
 					margin: 20px 0;
 					list-style-type: none;
 					display: inline-block;
@@ -210,6 +214,7 @@
 			}
 		}
 		.upgradeNow{
+			box-sizing: border-box;
 			margin: 20px;
 			padding: 15px;
 			text-align: center;
@@ -228,23 +233,24 @@
 			}
 		}
 		p{
-			width: 600px;
+			box-sizing: border-box;
+			width: 100%;
 			text-align: center;
 			span:first-child{
-				margin-right:100px;
+				margin-right:15%;
 				display: inline-block;
-				width: 100px;
+				width: 15%;
 				height: 5px;
 				background-image: url(../../static/images/member/line_left.png);
 				background-size: 100%,100%;
 			}
 			span:last-child{
 				display: inline-block;
-				width: 100px;
+				width: 15%;
 				height: 5px;
 				background-image: url(../../static/images/member/line_right.png);
 				background-size: 100%,100%;
-				margin-left: 100px;
+				margin-left: 15%;
 			}
 		}
 		.interest{
@@ -253,6 +259,7 @@
 			text-align: center;
 		}
 		.daKa{
+			text-align: left;
 			padding-bottom: 20px;
 			border-bottom: 1px solid #e0dcd1;
 			h3{
@@ -264,11 +271,12 @@
 				font-size: 14px;
 			}
 			.dakaCake{
+				width: 40%;
 				display: inline-block;
 				margin-left: 30px;
 				text-align: left;
 				img{
-					width: 250px;
+					width: 100%;
 				}
 				span{
 					font-size: 14px;
@@ -290,7 +298,8 @@
 		}
 	}
 	.party{
-		width: 600px;
+		box-sizing: border-box;
+		width: 95%;
 		margin:20px auto;
 		padding: 10px 0;
 		background-color: white;
@@ -301,7 +310,7 @@
 				font-size: 14px;
 			}
 			img{
-				width: 560px;
+				width: 100%;
 			}
 		}
 		&>div:last-child{
@@ -315,22 +324,24 @@
 		}
 	}
 	.rebate{
-		width: 560px;
+		box-sizing: border-box;
+		width: 95%;
 		height: 400px;
 		margin:20px auto 30px;
 		background-color: white;
 		padding: 20px;
+		position: relative;
 		&>p{
 			color: #9c9c9c;
 			font-size: 14px;
 		}
 		img{
-			width: 560px;
+			width: 100%;
 		}
 		>div{
 			margin: 20px;
-			position: relative;
-			top: -250px;
+			position: absolute;
+			top: 70px;
 			color: white;
 			font-size: 14px;
 			text-align: left;
@@ -346,6 +357,7 @@
 		padding-bottom: 20px;
 	}
 	footer{
+		box-sizing: border-box;
 		width: 100%;
 		background-color: #b89865;
 		text-align: center;

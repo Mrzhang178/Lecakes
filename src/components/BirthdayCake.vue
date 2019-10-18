@@ -186,6 +186,16 @@
 				this.fa=true;
 				this.fb=false;
 				this.fc=false;
+				for(var x=1;x<this.BirProducts.length;x++){
+					for(var j = 0;j < this.BirProducts.length-x ;j++){
+						if(this.BirProducts[j].id > this.BirProducts[j+1].id){
+							var temp = this.BirProducts[j];
+							this.BirProducts[j] = this.BirProducts[j+1];
+							this.BirProducts[j+1] = temp;
+						}
+					}
+				}
+				this.$forceUpdate()
 			},
 			r2(){
 				this.fb=true;
@@ -206,6 +216,16 @@
 				this.fc=true;
 				this.fa=false;
 				this.fb=false;
+				for(var x=1;x<this.BirProducts.length;x++){
+					for(var j = 0;j < this.BirProducts.length-x ;j++){
+						if(this.BirProducts[j].id < this.BirProducts[j+1].id){
+							var temp = this.BirProducts[j];
+							this.BirProducts[j] = this.BirProducts[j+1];
+							this.BirProducts[j+1] = temp;
+						}
+					}
+				}
+				this.$forceUpdate()
 			}
 		}
 	}
