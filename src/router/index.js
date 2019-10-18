@@ -2,18 +2,18 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import LunboOne from '@/components/lunbotu/lunboOne'
-// import LunboTwo from '@/components/lunbotu/lunboTwo'
-// import LunboThree from '@/components/lunbotu/lunboThree'
-// import LunboFour from '@/components/lunbotu/lunboFour'
-// import LunboFive from '@/components/lunbotu/lunboFive'
+import LingquanXiadan from '@/components/lunbotu/lingquanxiadan'
 import DessertGift from '@/components/DessertGift'
-import XiaoliangGift from '@/components/xiaoliangGift'
-import XiandingGift from '@/components/XiandingGift'
 import BirthdayCake from '@/components/BirthdayCake'
 import ShoppingCart from '@/components/ShoppingCart'
 import Home from '@/components/Home'
 import News from '@/components/news'
 import Member from '@/components/member'
+import Prodetails from '@/components/prodetails'
+import Pinglun from '@/components/pinglun'
+import Entry from '@/components/entry'
+import NewsHome from '@/components/newsHome'
+import BirZhuFu from '@/components/birZhuFu'
 
 
 Vue.use(Router)
@@ -32,6 +32,11 @@ export default new Router({
       component: LunboOne
     },
     {
+      path: '/lingquanxiadan',
+      name: 'LingquuanXiadan',
+      component: LingquanXiadan
+    },
+    {
           path: '/news',
           name: 'News',
           component: News,
@@ -45,23 +50,11 @@ export default new Router({
       path: '/dessertGift',
       name: 'DessertGift',
       component: DessertGift,
-      children:[
-        {
-          path: '/dessertGift/xiaoliangGift',
-          name: 'XiaoliangGift',
-          component: XiaoliangGift,
-        },
-        {
-          path: '/dessertGift/xiandingGift',
-          name: 'XiandingGift',
-          component: XiandingGift,
-        }
-      ]
     },
     {
       path: '/birthdayCake',
       name: 'BirthdayCake',
-      component: BirthdayCake
+      component: BirthdayCake,
     },
     {
       path: '/shoppingCart',
@@ -72,6 +65,31 @@ export default new Router({
       path: '/home',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/prodetails',
+      name: 'Prodetails',
+      component: Prodetails
+    },
+    {
+      path: '/pinglun',
+      name: 'Pinglun',
+      component: Pinglun
+    },
+    {
+      path: '/entry',
+      name: 'Entry',
+      component: Entry
+    },
+    {
+      path: '/newsHome',
+      name: 'NewsHome',
+      component: NewsHome
+    },
+    {
+      path: '/birZhuFu',
+      name: 'BirZhuFu',
+      component: BirZhuFu
     }
   ]
 })

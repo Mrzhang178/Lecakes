@@ -9,4 +9,10 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+  	localStorage.removeItem("proShopCar")
+  	if(!localStorage.getItem("proShopCar")){
+  		localStorage.setItem("proShopCar",'{"shuxing":[]}')
+  	}
+  </script>
 </html>

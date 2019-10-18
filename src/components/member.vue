@@ -258,7 +258,7 @@
 			h3{
 				padding-left: 35px;
 			}
-			>span{
+			&>span{
 				padding-left: 35px;
 				color: #9c9c9c;
 				font-size: 14px;
@@ -294,7 +294,7 @@
 		margin:20px auto;
 		padding: 10px 0;
 		background-color: white;
-		>div:first-child{
+		&>div:first-child{
 			margin: 20px;
 			p{
 				color: #9c9c9c;
@@ -304,7 +304,7 @@
 				width: 560px;
 			}
 		}
-		>div:last-child{
+		&>div:last-child{
 			border-top: 1px solid #e0dcd1;
 			text-align: center;
 			padding: 10px 0; 
@@ -320,7 +320,7 @@
 		margin:20px auto 30px;
 		background-color: white;
 		padding: 20px;
-		>p{
+		&>p{
 			color: #9c9c9c;
 			font-size: 14px;
 		}

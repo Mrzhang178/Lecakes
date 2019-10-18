@@ -32,10 +32,23 @@
 			<img src="../../../static/images/lunbo1/2.jpg" alt="">
 			<img src="../../../static/images/lunbo1/3.jpg" alt="">
 			<img src="../../../static/images/lunbo1/4.jpg" alt="">
+			<router-link to="" class="a1"></router-link>
+			<router-link to="" class="a2"></router-link>
+			<router-link to="/member" class="a3"></router-link>
 			<img src="../../../static/images/lunbo1/5.jpg" alt="">
 			<img src="../../../static/images/lunbo1/6.jpg" alt="">
 			<img src="../../../static/images/lunbo1/7.jpg" alt="">
 			<img src="../../../static/images/lunbo1/8.jpg" alt="">
+			<div class="rules">
+				<b>活动规则</b>
+				<p>活动时间：2019年10月9日至2019年10月23日</p>
+				<p>配送区域：华东、华南诺心可配送区域，具体配送范围及收费标准以下单信息为准。</p>
+				<p>适用商品：闲蛋皇、茶草京都、芋见伯爵、果然倾心（2-4人食）</p>
+				<br>
+				<b>参与规则</b>
+				<p>1. 活动期间，单笔订单正价购买闲蛋皇、茶草京都、芋见伯爵、果然倾心2-4人食，免费加大为5-8人食</p>
+				<p>2. 本活动仅限aha会员参与，不与其他优惠同享（如优惠券、蛋糕券、兑换券、储值卡、银行优惠等）。</p>
+			</div>
 		</section>
 	</div>
 </template>
@@ -69,6 +82,7 @@ nav{
   height: 35px;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   line-height: 35px;
   background-color: white;
@@ -78,7 +92,7 @@ nav{
   div{
     text-align: left;
     position: absolute;
-    left: 20px;
+    left: 10px;
     display: inline-block; 
     a{
       text-decoration: none;
@@ -113,14 +127,25 @@ nav{
   background-size: cover;
 }
 section{
-	width: 600px;
+	width: 100%;
 	margin: 35px auto;
+	position: relative;
 	display:flex;
 	flex-wrap:wrap;
+	.rules{
+		position: absolute;
+		font-size: 14px;
+		bottom:70px;
+		left: 15px;
+	}
 	img{
-		width: 600px;
+		width: 100%;
 		margin:0;
 		padding:0;
+	}
+	a{
+		display: inline-block;
+		position: absolute;
 	}
 }
 </style>

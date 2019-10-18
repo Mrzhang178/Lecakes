@@ -10,10 +10,10 @@
 				</a>
 			</div>
 			<div>
-				<span @click="r1"><router-link to="/dessertGift" :class="{'aqq':fa}">综合</router-link></span>
-				<span @click="r2"><router-link to="/dessertGift/xiaoliangGift" :class="{'aqq':fb}">销量</router-link></span>
-				<span @click="r3"><router-link to="/dessertGift/xiandingGift" :class="{'aqq':fc}">季度限定</router-link></span>
-			</div>
+				<span @click="r1" :class="{'aqq':fa}">综合</span>
+				<span @click="r2" :class="{'aqq':fb}">销量</span>
+				<span @click="r3" :class="{'aqq':fc}">季度限定</span>
+			</div> 
 		</nav>
 		<el-dialog
 		  title="配送至"
@@ -27,67 +27,13 @@
 		    </span>
 		</el-dialog>
 		<section>
-			<router-link to="">
-			  <img src="../../static/images/dessertGift/1.jpg" alt="">
-			  <br>
-			  <span>心悦团圆礼盒（四枚入）</span>
-			  <p>团圆创意礼盒 中秋馈赠佳礼</p>
-			  <br><br>
-			  <p>&yen;232</p>
-			</router-link>
-			<router-link to="">
-			  <img src="../../static/images/dessertGift/2.jpg" alt="">
-			  <br>
-			  <span>心悦团圆礼盒（四枚入）</span>
-			  <p>团圆创意礼盒 中秋馈赠佳礼</p>
-			  <br><br>
-			  <p>&yen;232</p>
-			</router-link>
-			<router-link to="">
-			  <img src="../../static/images/dessertGift/3.jpg" alt="">
-			  <br>
-			  <span>心悦团圆礼盒（四枚入）</span>
-			  <p>团圆创意礼盒 中秋馈赠佳礼</p>
-			  <br><br>
-			  <p>&yen;232</p>
-			</router-link>
-			<router-link to="">
-			  <img src="../../static/images/dessertGift/4.jpg" alt="">
-			  <br>
-			  <span>心悦团圆礼盒（四枚入）</span>
-			  <p>团圆创意礼盒 中秋馈赠佳礼</p>
-			  <br><br>
-			  <p>&yen;232</p>
-			</router-link>
-			<router-link to="">
-			  <img src="../../static/images/dessertGift/3.jpg" alt="">
-			  <br>
-			  <span>心悦团圆礼盒（四枚入）</span>
-			  <p>团圆创意礼盒 中秋馈赠佳礼</p>
-			  <br><br>
-			  <p>&yen;232</p>
-			</router-link>
-			<router-link to="">
-			  <img src="../../static/images/dessertGift/3.jpg" alt="">
-			  <br>
-			  <span>心悦团圆礼盒（四枚入）</span>
-			  <p>团圆创意礼盒 中秋馈赠佳礼</p>
-			  <br><br>
-			  <p>&yen;232</p>
-			</router-link>
-			<router-link to="" class="lastA">
-			  <img src="../../static/images/dessertGift/5.jpg" alt="">
-			  <br>
-			  <span>个性字母透明挎包</span>\
-			  <p>秀场街拍潮品</p>
-			  <p>清凉又撩人 百搭潮品</p>
-			  <br>
-			  <br>
-			  <p>
-			  	&yen;232
-			  	<img src="../../static/images/dessertGift/markupPrice.png" alt="">
-			  	<span>&yen;38</span>
-			  </p>
+			<router-link to="" v-for="(des,d) in proDess" :key="d" class="goods">
+			  <img :src="des.imgs" alt="">
+			  <div>
+		  		<span>{{des.pname}}</span>
+				  <p>{{des.desc}}</p>
+			  </div>
+			  <p>&yen;{{des.price}}</p>
 			</router-link>
 			<p>—— 没有更多产品咯 ——</p>
 		</section>
@@ -131,18 +77,73 @@
 		data(){
 			return{
 				add1:"0",
+				// rec:this.$route.query.ad,
 				centerDialogVisible: false,
 				adds:['上海','北京','广州','南京','成都','深圳','杭州','苏州','天津','宁波','无锡','绍兴','嘉兴','重庆'],
 				Aside:false,
 				fa:true,
 				fb:false,
-				fc:false
+				fc:false,
+				proDess:[
+					{
+						id:'011',
+	          imgs:'../../static/images/dessertGift/1.jpg',
+	          pname:'心悦团圆礼盒（四枚入）',
+	          desc:"团圆创意礼盒 中秋馈赠佳礼",
+	          price:218,
+	          xiaoliang:542,
+					},
+					{
+						id:'012',
+	          imgs:'../../static/images/dessertGift/1.jpg',
+	          pname:'心悦团圆礼盒（六枚入）',
+	          desc:"团圆创意礼盒 中秋馈赠佳礼",
+	          price:298,
+	          xiaoliang:412,
+					},
+					{
+							id:'013',
+	          imgs:'../../static/images/dessertGift/2.jpg',
+	          pname:'心悦团圆礼盒（六枚入）',
+	          desc:"金奖月饼&创意礼盒 中秋馈赠佳礼",
+	          price:218,
+	          xiaoliang:825,
+					},
+					{
+						id:'014',
+	          imgs:'../../static/images/dessertGift/3.jpg',
+	          pname:'喵叽叽云顶小花曲奇礼盒（原味）',
+	          desc:"征服朋友圈的办公室零食",
+	          price:158,
+	          xiaoliang:417,
+					},
+					{
+						id:'015',
+	          imgs:'../../static/images/dessertGift/4.jpg',
+	          pname:'心悦团圆礼盒（四枚入）',
+	          desc:"卖到疯狂的秒杀款",
+	          price:158,
+	          xiaoliang:75,
+					},
+					{
+						id:'016',
+	          imgs:'../../static/images/dessertGift/5.jpg',
+	          pname:'喵叽叽云顶小花曲奇礼盒（咖啡味）',
+	          desc:"财富自由新标配",
+	          price:68,
+	          xiaoliang:641,
+					}
+				],
 			}
 		},
 		mounted(){
 			window.addEventListener('scroll',this.handleScroll);
 		},
 		methods:{
+			addNow:function(ad){
+			  this.add1=ad,
+			  this.centerDialogVisible=false
+			},
 			handleScroll:function(){
 				this.scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 				if (this.scrollTop>500){
@@ -160,12 +161,22 @@
 				this.fb=true;
 				this.fa=false;
 				this.fc=false;
+				for(var x=1;x<this.proDess.length;x++){
+					for(var j = 0;j < this.proDess.length-x ;j++){
+						if(this.proDess[j].xiaoliang < this.proDess[j+1].xiaoliang){
+							var temp = this.proDess[j];
+							this.proDess[j] = this.proDess[j+1];
+							this.proDess[j+1] = temp;
+						}
+					}
+				}
+				this.$forceUpdate()
 			},
 			r3(){
 				this.fc=true;
 				this.fa=false;
 				this.fb=false;
-			}
+			},
 		}
 	}
 </script>
@@ -188,13 +199,14 @@ nav{
 	background-color: white;
 	position: fixed;
 	top: 0;
+	left: 0;
 	border-bottom: 1px solid gray;
 	div{
 		display: inline-block;
 	}
 	div:first-child{
-		position: relative;
-		left: -35%;
+		position: absolute;
+		left: 15px;
 		img{
 			position: relative;
 			top: 5px;
@@ -202,14 +214,12 @@ nav{
 		}
 	}
 	div:last-child{
-		.classification{
-			color: #ff4b0f;
-		}
-		a{
-			padding: 0 10px;
+		span{
+			font-size: 14px;
+			padding: 0 5px;
 		}
 		.aqq{
-			color: #ff4001;
+			color: #ff4b0f;
 		}
 	}
 }
@@ -219,14 +229,21 @@ nav{
   padding: 0;
 }
 section{
-	width: 640px;
+	width: 100%;
 	margin:60px auto;
-	a{
+	.goods{
+		font-size: 14px;
 		display: inline-block;
-		width: 280px;
+		width: 40%;
 		margin:0 15px; 
+		div{
+			height: 100px;
+			p{
+				color: #9c9c9c;
+			}
+		}
 		img{
-			width: 300px;
+			width: 100%;
 		}
 		p:nth-child(4){
 			color: #9c9c9c;
@@ -258,11 +275,6 @@ section{
 	}
 }
 footer{
-  .hellodingtong{
-    width: 100%; 
-    margin: 0;
-    padding: 0;
-  }
   .helloFooter {
     width: 100%;
     min-width: 250px;
@@ -271,6 +283,7 @@ footer{
     list-style-type: none;
     position: fixed;
     bottom: 0;
+    left: 0;
     column-count: 5;
     z-index: 1000;
     background-color: white;
@@ -282,7 +295,7 @@ footer{
       font-size: 12px;
       text-align:center;
       img{
-        width: 20px;
+        height: 20px;
       }
     }
   }

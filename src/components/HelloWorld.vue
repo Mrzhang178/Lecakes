@@ -33,7 +33,7 @@
         </router-link>
       </div>
       <div class="carousel">
-        <el-carousel :interval="5000" arrow="always" height="850px" indicator-position="outside">
+        <el-carousel indicator-position="outside" arrow="always" :interval="5000">
           <el-carousel-item v-for="(i,s) in imgs" :key="s">
             <h3>
               <router-link :to="srcs[s]">
@@ -44,87 +44,30 @@
         </el-carousel>        
       </div>
       <div class="carouselBottom">
-        <img src="../../static/images/Helloword/lunboxia1.jpg" alt="">
-        <img src="../../static/images/Helloword/lunboxia2.jpg" alt="">
+        <router-link to="/lingquanxiadan">
+          <img src="../../static/images/Helloword/lunboxia1.jpg" alt="">
+        </router-link>
+        <router-link to="/member">
+          <img src="../../static/images/Helloword/lunboxia2.jpg" alt="">
+        </router-link>
       </div>
       <div class="btdCake">
-        <router-link to="">
+        <router-link to="/birthdayCake">
           生日蛋糕
           <img src="../../static/images/Helloword/btdcake.png" alt="">
         </router-link>
       </div>
       <div class="btdCakeType">
-        <router-link to="">
-          <img src="../../static/images/Helloword/btdcake1.jpg" alt="">
+        <router-link to="/prodetails" v-for="(pro,p) in products" :key="p">
+          <img :src="pro.imgs" alt="">
           <br>
           <br>
-          <span>雪域牛乳芝士·特浓</span>
+          <span>{{pro.pname}}</span>
+          <br>
+          <span class="des">{{pro.desc}}</span>
           <br>
           <br>
-          <span>&yen;298</span>
-        </router-link>
-        <router-link to="">
-          <img src="../../static/images/Helloword/btdcake1.jpg" alt="">
-          <br>
-          <br>
-          <span>雪域牛乳芝士·特浓</span>
-          <br>
-          <br>
-          <span>&yen;298</span>
-        </router-link>
-        <router-link to="">
-          <img src="../../static/images/Helloword/btdcake1.jpg" alt="">
-          <br>
-          <br>
-          <span>雪域牛乳芝士·特浓</span>
-          <br>
-          <br>
-          <span>&yen;298</span>
-        </router-link>
-        <router-link to="">
-          <img src="../../static/images/Helloword/btdcake1.jpg" alt="">
-          <br>
-          <br>
-          <span>雪域牛乳芝士·特浓</span>
-          <br>
-          <br>
-          <span>&yen;298</span>
-        </router-link>
-        <router-link to="">
-          <img src="../../static/images/Helloword/btdcake1.jpg" alt="">
-          <br>
-          <br>
-          <span>雪域牛乳芝士·特浓</span>
-          <br>
-          <br>
-          <span>&yen;298</span>
-        </router-link>
-        <router-link to="">
-          <img src="../../static/images/Helloword/btdcake1.jpg" alt="">
-          <br>
-          <br>
-          <span>雪域牛乳芝士·特浓</span>
-          <br>
-          <br>
-          <span>&yen;298</span>
-        </router-link>
-        <router-link to="">
-          <img src="../../static/images/Helloword/btdcake1.jpg" alt="">
-          <br>
-          <br>
-          <span>雪域牛乳芝士·特浓</span>
-          <br>
-          <br>
-          <span>&yen;298</span>
-        </router-link>
-        <router-link to="">
-          <img src="../../static/images/Helloword/btdcake1.jpg" alt="">
-          <br>
-          <br>
-          <span>雪域牛乳芝士·特浓</span>
-          <br>
-          <br>
-          <span>&yen;298</span>
+          <span>&yen;{{pro.price}}</span>
         </router-link>
       </div>
       <div class="breakfastImg">
@@ -139,32 +82,14 @@
         </router-link>
       </div>
       <div class="breakfastType">
-        <router-link to="">
-          <img src="../../static/images/Helloword/breakfast.jpg" alt="">
+        <router-link to="" v-for="(bft,b) in bfts" :key="b">
+          <img :src="bft.imgs" alt="">
           <br>
           <br>
-          <span>随心周周配</span>
+          <span>{{bft.pname}}</span>
           <br>
           <br>
-          <span>&yen;232</span>
-        </router-link>
-        <router-link to="">
-          <img src="../../static/images/Helloword/breakfast.jpg" alt="">
-          <br>
-          <br>
-          <span>随心周周配</span>
-          <br>
-          <br>
-          <span>&yen;232</span>
-        </router-link>
-        <router-link to="">
-          <img src="../../static/images/Helloword/breakfast.jpg" alt="">
-          <br>
-          <br>
-          <span>随心周周配</span>
-          <br>
-          <br>
-          <span>&yen;232</span>
+          <span>&yen;{{bft.price}}</span>
         </router-link>
       </div>
       <div class="dessertGift">
@@ -173,38 +98,21 @@
         </router-link>
       </div>
       <div class="gift">
-        <router-link to="">
+        <router-link to="/dessertGift">
           甜点心礼
           <img src="../../static/images/Helloword/btdcake.png" alt="">
         </router-link>
       </div>
       <div class="giftType">
-        <router-link to="">
-          <img src="../../static/images/Helloword/dessertgift1.jpg" alt="">
+        <router-link to="" v-for="(gif,t) in gifts" :key="t">
+          <img :src="gif.imgs" alt="">
+          <div>          
+            <span>{{gif.pname}}</span>
+            <br>
+            <span class="spans">{{gif.desc}}</span>
+          </div>
           <br>
-          <br>
-          <span>喵叽叽云顶小花曲奇礼盒（原味）</span>
-          <br>
-          <br>
-          <span>&yen;158</span>
-        </router-link>
-        <router-link to="">
-          <img src="../../static/images/Helloword/dessertgift1.jpg" alt="">
-          <br>
-          <br>
-          <span>喵叽叽云顶小花曲奇礼盒（原味）</span>
-          <br>
-          <br>
-          <span>&yen;158</span>
-        </router-link>
-        <router-link to="">
-          <img src="../../static/images/Helloword/dessertgift1.jpg" alt="">
-          <br>
-          <br>
-          <span>喵叽叽云顶小花曲奇礼盒（原味）</span>
-          <br>
-          <br>
-          <span>&yen;158</span>
+          <span>&yen;{{gif.price}}</span>
         </router-link>
       </div>
       <div class="exchange">
@@ -242,7 +150,8 @@
               <img src="../../static/images/Helloword/user-cake.png" alt="">
             </router-link>
           </div>
-        </div><div>
+        </div>
+        <div>
           <ul>
             <li>
               <img src="../../static/images/Helloword/user2.png" alt="">
@@ -344,45 +253,107 @@ export default {
       ],
       srcs:[
         "/lunboOne",
-        "/lunboTwo",
-        "/lunboThree",
-        "/lunboFour",
-        "/lunboFive"
+        "/member",
+        "/lunboOne",
+        "/lunboOne",
+        "/lunboOne"
       ],
       adds:['上海','北京','广州','南京','成都','深圳','杭州','苏州','天津','宁波','无锡','绍兴','嘉兴','重庆'],
-     // products:[
-      //   {
-      //     id:'001',
-      //     imgs:'../../static/images/Helloword/btdcake1.jpg',
-      //     pname:'雪域牛乳芝士·特浓',
-      //     price:298
-      //   },
-      //   {
-      //     id:'002',
-      //     imgs:'../../static/images/Helloword/btdcake2.jpg',
-      //     pname:'桂圆琥珀核桃',
-      //     price:218
-      //   },
-      //   {
-      //     id:'003',
-      //     imgs:'../../static/images/Helloword/btdcake3.jpg',
-      //     pname:'雪域牛乳芝士',
-      //     price:218
-      //   },
-      //   {
-      //     id:'004',
-      //     imgs:'../../static/images/Helloword/btdcake4.jpg',
-      //     pname:'茶草京都',
-      //     price:218
-      //   },
-      
+      products:[
+        {
+          id:'001',
+          imgs:'../../static/images/Helloword/btdcake1.jpg',
+          pname:'雪域牛乳芝士·特浓',
+          desc:"甄选澳洲a2®全脂鲜牛奶 浓醇升级",
+          price:298
+        },
+        {
+          id:'002',
+          imgs:'../../static/images/Helloword/btdcake2.jpg',
+          pname:'桂圆琥珀核桃',
+          desc:"滋养新食尚 予你不藏私的关怀",
+          price:218
+        },
+        {
+          id:'003',
+          imgs:'../../static/images/Helloword/btdcake3.jpg',
+          pname:'雪域牛乳芝士',
+          desc:"滋养新食尚 予你不藏私的关怀",
+          price:218
+        },
+        {
+          id:'004',
+          imgs:'../../static/images/Helloword/btdcake4.jpg',
+          pname:'茶草京都',
+          desc:"抹茶控京都寻味 草色茶香自悠然",
+          price:218
+        },
+        {
+          id:'005',
+          imgs:'../../static/images/Helloword/btdcake4.jpg',
+          pname:'草莓拿破仑',
+          desc:"经典之作 热销多年",
+          price:218
+        },
+        {
+          id:'006',
+          imgs:'../../static/images/Helloword/btdcake4.jpg',
+          pname:'环游世界',
+          desc:"迷上缤纷果香的滋味",
+          price:218
+        },
+      ],
+      bfts:[
+        {
+          id:'010',
+          imgs:'../../static/images/Helloword/breakfast.jpg',
+          pname:'随心周周配',
+          price:223
+        },
+        {
+          id:'020',
+          imgs:'../../static/images/Helloword/breakfast.jpg',
+          pname:'随心周周配',
+          price:223
+        },
+        {
+          id:'030',
+          imgs:'../../static/images/Helloword/breakfast.jpg',
+          pname:'随心周周配',
+          price:223
+        },
+      ],
+      gifts:[
+        {
+          id:'010',
+          imgs:'../../static/images/Helloword/dessertgift1.jpg',
+          pname:'喵叽叽云顶小花曲奇礼盒（原味）',
+          desc:"卖到疯狂的秒杀款",
+          price:158
+        },
+        {
+          id:'020',
+          imgs:'../../static/images/Helloword/dessertgift1.jpg',
+          pname:'喵叽叽云顶小花曲奇礼盒（巧克力味）',
+          desc:"",
+          price:158
+        },
+        {
+          id:'030',
+          imgs:'../../static/images/Helloword/dessertgift1.jpg',
+          pname:'喵叽叽云顶小花曲奇礼盒（原味+巧克力味）',
+          desc:"征服朋友圈的办公室零食",
+          price:158
+        },
+      ]
     }
   },
   methods:{
     addNow:function(ad){
       this.add1=ad,
       this.centerDialogVisible=false
-    }
+     
+    },
   }
 }
 </script>
@@ -400,6 +371,7 @@ nav{
   height: 35px;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   line-height: 35px;
   background-color: white;
@@ -409,7 +381,7 @@ nav{
   div{
     text-align: left;
     position: absolute;
-    left: 20px;
+    left: 10px;
     display: inline-block; 
     a{
       text-decoration: none;
@@ -418,7 +390,7 @@ nav{
       img{
         position: relative;
         top:3px;
-        width:17px;
+        width:13px;
       }
     }
     .searchMap{
@@ -433,7 +405,7 @@ nav{
     position: absolute;
     right: 20px;
     img{
-      width: 23px;
+      width: 17px;
     }
   }
 }
@@ -443,23 +415,26 @@ nav{
   background-size: cover;
 }
 section{
-  width: 750px;
-  margin: 36px auto 50px;
+  width: 100%;
+  margin: auto ;
   background-color: white;
-  .secT{
+  .member{
+    margin-top: 38px;
+    img{
+      width: 100%;
+    }
   }
   .carousel{
-    padding: 30px;
-    .el-carousel__item h3 a{
-      color: #475669;
-      font-size: 18px;
-      margin: 0;
+    .el-carousel{
+    }
+    img{
+      width: 100%;
     }
   }
   .carouselBottom{
-    height: 500px;
-    padding: 30px;
+    padding: 15px;
     img{
+      width: 45%;
       margin: 0 5px;
     }
   }
@@ -477,42 +452,61 @@ section{
     }
   }
   .btdCakeType{
-    padding: 15px 25px;
+    width: 100%;
+    text-align:center;
     a{
+      width: 40%;
       display: inline-block;
       margin: 20px 5px;
       text-decoration: none;
       color: black;
+      .des{
+        font-size: 14px;
+        color: #9c9c9c;
+      }
+      img{
+        width: 100%;
+      }
     }
   }
   .breakfastImg,.dessertGift,.exchange{
-    padding: 30px;
     img{
-      width: 690px;
+      width: 100%;
     }
   }
   .breakfastType,.giftType{
     padding: 15px 25px;
     a{
+      width: 45%;
       display: inline-block;
       margin: 5px 5px;
       text-decoration: none;
       color: black;
       font-size: 14px;
       img{
-        width: 200px;
+        width: 100%;
+      }
+      div{
+        height: 80px;
+      }
+      span{
+        display: inline-block;
+        width: 150px;
+      }
+      .spans{
+        color: #9c9c9c;
       }
     }
   }
   .cooperation{
+    text-align: center;
     ul{
-      width: 310px;
+      width: 35%;
       display: inline-block;
       list-style-type: none;
       background-color: #f4f4f4;
       font-size: 14px;
       text-align: center;
-      margin: 30px;
       color: black;
       img{
         width: 35px;
@@ -528,27 +522,31 @@ section{
     font-size: 21px;
   }
   .comment{
+    text-align: center;
     margin-top: 20px;
-    ul{
-      list-style-type: none;
-      text-align: center;
-      li{
-        width: 230px;
-        img{
-          width: 50px;
-          border-radius: 50px;
+    div{ 
+      width: 30%;
+      display: inline-block;
+      ul{
+        list-style-type: none;
+        text-align: center;
+        li{
+          width: 20%;
+          padding:0 10px;
+          img{
+            margin: 0 10px;
+            width: 50px;
+            border-radius: 50px;
+          }
         }
       }
-    }
-    div{ 
-      display: inline-block;
-      margin-left: 15px;
       div{
-        width: 200px;
+        width: 100%;
         padding-top: 30px;
-        font-size: 14px;
+        font-size: 12px;
         background-image: url(../../static/images/Helloword/comment_bg.png);
-        background-size: cover; 
+        background-size: contain; 
+        background-repeat: no-repeat;
       }
       a{
         text-decoration: none;
@@ -562,7 +560,7 @@ section{
           padding-bottom: 30px;
         }
         img{
-          width: 200px;
+          width: 100%;
         }
       }
     }
@@ -588,19 +586,14 @@ section{
   }
 }
 footer{
-  .hellodingtong{
-    width: 100%; 
-    margin: 0;
-    padding: 0;
-  }
   .helloFooter {
     width: 100%;
-    min-width: 250px;
     height: 43px;
     text-align: center;
     list-style-type: none;
     position: fixed;
     bottom: 0;
+    left: 0;
     column-count: 5;
     z-index: 1000;
     background-color: white;
@@ -612,7 +605,7 @@ footer{
       font-size: 12px;
       text-align:center;
       img{
-        width: 20px;
+        height: 20px;
       }
     }
   }
