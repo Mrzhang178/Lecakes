@@ -77,7 +77,6 @@
 		data(){
 			return{
 				add1:"0",
-				// rec:this.$route.query.ad,
 				centerDialogVisible: false,
 				adds:['上海','北京','广州','南京','成都','深圳','杭州','苏州','天津','宁波','无锡','绍兴','嘉兴','重庆'],
 				Aside:false,

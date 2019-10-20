@@ -25,7 +25,7 @@
 				<span>点击选购></span>
 			</nav>
 			<section class="pro1" v-for='(cakeA,A) in cakes' :key="A">
-				<img :src="xuanzhong" alt="">
+				<img :src="xuanzhong" alt="" @click='allCkeck'>
 				<img :src="cakeA.imgs" alt="">
 				<div>
 					<p>{{cakeA.pname}}</p>
@@ -74,7 +74,7 @@
 			</section>
 			<section class="jieSuan">
 				<div @click='allCkeck'>
-					<img :src="xuanzhong" alt="">					全选
+					<img :src="xuanzhong" alt="">	全选
 				</div>
 				<div>
 					<span>应付&yen;<span>{{zongjia}}</span></span>
@@ -240,7 +240,7 @@
 				}
 			},
 			del(){
-				localStorage.clear();
+				this.cakes='';
 			},
 			allCkeck(){
 				if(this.xuanzhong=='../../static/images/shoppingCart/xuanzhong.png'){
@@ -263,7 +263,7 @@
 			},
 			birt(){
 				return window.location.href='#/birZhuFu';
-			}
+			},
 		}
 	}
 </script>

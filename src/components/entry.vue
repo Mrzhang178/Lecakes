@@ -87,8 +87,12 @@
 				}
 			},
 			validate(){
-				sessionStorage.setItem(this.phoneNum,this.newNum)
-				return window.location.href='#/home';
+				if(this.newNum !=''){
+					sessionStorage.setItem(this.phoneNum,this.newNum)
+					return window.location.href='#/home';
+				}else{
+					alert('请输入验证码')
+				}
 			}
 		}
 	}
